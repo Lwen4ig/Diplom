@@ -1,0 +1,127 @@
+
+{% extends 'index.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+  <header class="header-secondscreen">
+      <div class="container">
+        <div class="header-row">
+          <a href="{% url 'index' %}" class="header-home"><p class="logo">Weather</p></a>
+          <nav class="navigation">
+            <ul class="navigation-list">
+              <li class="navigation-list__item">
+                <a href="{% url 'logout' %}" class="navigation-link">Logout</a>
+              </li>
+              <li class="navigation-list__item">
+                <a href="{% url 'signup' %}" class="navigation-link">Registration</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <section class="secondscreen">
+    <div class="container">
+      <div class="wrapper-secondscreen__form">
+        <div class="secondscreen__form">
+        <form action="" method="post">
+           {% csrf_token %}
+           {{ form.name }}
+          <button class="button-search"><i class="fas fa-search search-icon"></i></button>
+        </form>
+         <span class="error">{{ error }}</span>
+        </div>
+        <a href="{% url 'weather_clear' %}" class="button-clear"><i class="fas fa-redo-alt clear-icon"></i></a>
+      </div>
+      <div class="secondscreen-widgets__panel">
+      {% for info in all_info %}
+        <div class="secondscreen-widgets__form">
+          <div class="secondscreen-widgets__content__form">
+            <div class="content-city">
+              <i class="fas fa-map-marker-alt navigation-marker"></i>
+              <h2 class="name-city">{{ info.city }}</h2>
+            </div>
+            <div class="content-info">
+              <div class="temp-info">
+                <div class="wrapper-content__img">
+                 <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды" class="content-img">
+                </div>
+                <div class="wrapper-content__temp">
+                  <h2 class="content-temp">{{ info.temp }}</h2><span class="gradus">°</span>
+                </div>
+              </div>
+              <div class="wrapper-content__time">
+                <p class="content-time">{{ info.time }}</p>
+              </div>
+            </div>
+            <div class="content-data">
+              <div class="wrapper-content__data">
+                <h2 class="data">{{ info.data }}</h2>
+              </div>
+            </div>
+            <div class="content-detail">
+              <div class="wrapper-content__detail">
+                <a href="{{ info.id }}" class="detail">Detailed Forecast</a>
+              </div>
+            </div>
+            <div class="wrapper-content__footer">
+              <p class="content-footer">© OpenWeatherMap.org</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <ul class="footer-list">
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-facebook-f footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-twitter footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-google-plus-g footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-pinterest footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-instagram footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-vk footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fas fa-rss footer__icon"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer__copyrigths">
+        © 2021 WeatherApp
+      </p>
+    </div>
+  </footer>
+{% else %}
+ <p>You cannot go to the given url, because you are not logged in. Please log in to the main page of the application</p>
+{% endif %}
+{% endblock content %}
+

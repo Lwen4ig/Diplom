@@ -1,0 +1,257 @@
+.secondscreen {
+    padding: 60px 0 160px;
+    background-image: url("../img/pole.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.secondscreen:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wrapper-secondscreen__form {
+    width: 100%;
+    height: 93px;
+    display: flex;
+    justify-content: center;
+}
+
+.secondscreen__form {
+    position: relative;
+    width: 600px;
+    margin-left: 155px;
+}
+
+.form-search {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid rgba(17, 49, 142, 0.87);
+    border-radius: 5px;
+    outline: none;
+    background: white;
+    color: black;
+}
+
+.button-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: rgba(17, 49, 142, 0.87);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-icon {
+    font-size: 18px;
+}
+
+.button-search:hover {
+    color: white;
+}
+
+.error {
+    font-size: 15px;
+    color: rgba(175, 5, 27, 0.87);
+    font-weight: bold;
+    background: white;
+}
+
+.button-clear {
+    width: 42px;
+    height: 42px;
+    border: 2px solid rgba(201, 42, 55, 0.87);
+    background: rgba(168, 21, 21, 0.87);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.clear-icon {
+    font-size: 18px;
+}
+
+.button-clear:hover {
+    color: white;
+}
+
+.secondscreen-widgets__panel {
+    width: 100%;
+    height: 305px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.secondscreen-widgets__form {
+    width: 320px;
+    height: 370px;
+    background-color: rgba(4,1,17,0.8);
+    border-radius: 14px;
+    position: relative;
+    border: 1px solid #d0c3c3;
+    transition: transform 0.15s ease-in;
+}
+
+.secondscreen-widgets__form:hover {
+    position: relative;
+    transform: translateY(-18px);
+}
+
+.secondscreen-widgets__content__form {
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+}
+
+.content-city {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    text-align: start;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+}
+
+.navigation-marker {
+    color: #b20c0c;
+    font-size: 23px;
+    margin-top: 4px;
+}
+
+.name-city {
+    font-size: 25px;
+    color: white;
+    font-family: "Roboto";
+    margin-left: 7px;
+}
+
+.content-info {
+    width: 100%;
+    height: 123px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.temp-info {
+    height: 100%;
+    width: 80px;
+    font-size: 20px;
+    color: white;
+}
+
+.wrapper-content__img {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.content-img {
+    width: 80px;
+    height: auto;
+    padding-top: 15px;
+}
+
+.wrapper-content__temp {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    bottom: 0;
+    display: flex;
+    justify-content: start;
+    padding-left: 18px;
+}
+
+.content-temp {
+    font-size: 40px;
+    padding-bottom: 25px;
+    color: white;
+}
+
+.gradus {
+    font-size: 30px;
+}
+
+.wrapper-content__time {
+    width: 200px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-time {
+    margin: 30px auto;
+    font-size: 70px;
+    color: white;
+    font-family: "Barlow";
+}
+
+.content-data {
+    margin-bottom: 30px;
+}
+
+.wrapper-content__data {
+    width: 270px;
+    height: 30px;
+    text-align: end;
+}
+
+.data {
+    font-size: 15px;
+    color: white;
+}
+
+.content-detail {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.wrapper-content__detail {
+    text-align: center;
+    height: 100%;
+    width: 200px;
+    padding-top: 8px;
+}
+
+.detail {
+    font-size: 18px;
+    color: rgba(189, 201, 63, 0.87);
+}
+
+.detail:hover {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(247, 253, 185, 0.87);
+}
+
+.wrapper-content__footer {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.content-footer {
+    color: #cccccc;
+}

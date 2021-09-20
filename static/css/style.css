@@ -1,0 +1,22 @@
+
+@import "header.css";
+@import "firstscreen.css";
+@import "secondscreen.css";
+@import "footer.css";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}

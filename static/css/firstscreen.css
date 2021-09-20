@@ -1,0 +1,128 @@
+.firstscreen {
+    padding: 83px 0 165px;
+    background-image: url("../img/groza_1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.firstscreen:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.firstscreen-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstscreen-form__description {
+    width: 550px;
+    height: 300px;
+    margin-top: 35px;
+}
+
+.firstscreen-title {
+    padding-bottom: 32px;
+    color: white;
+    font-family: "Raleway";
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 70px;
+}
+
+.firstscreen-title::after {
+    content: "Now";
+    color: #e74848;
+}
+
+.firstscreen-header__text {
+    width: 550px;
+    font-family: "Roboto";
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 42px;
+    color: whitesmoke;
+}
+
+.firstscreen-description {
+    width: 340px;
+    font-family: "Raleway";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.82);
+    margin-top: 45px;
+}
+
+.firstscreen-form {
+    width: 370px;
+    height: 370px;
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+}
+
+.firstscreen-form__title {
+    width: 100%;
+    height: 56px;
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 44px;
+}
+
+.firstscreen-colorword {
+    margin: 0 4px 0;
+    text-transform: uppercase;
+    color: #e74848;
+}
+
+.firstscreen-form__content {
+    width: 100%;
+    padding-left: 59px;
+    padding-right: 59px;
+    text-align: center;
+}
+
+.firstscreen-form__content__welcome {
+    font-size: 20px;
+    font-family: "Gluten";
+}
+
+.firstscreen-button__start {
+    width: 180px;
+    height: 42px;
+    border: 2px solid #3a2765;
+    border-radius: 5px;
+    background: #e74848;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    margin: 45px auto 0;
+    text-align: center;
+    align-items: center;
+}
+
+.firstscreen-button__start:hover {
+    border: 2px solid rgb(58, 39, 101);
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+    cursor: default;
+    background: #464649;
+}

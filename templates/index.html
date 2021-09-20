@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeatherNow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine&family=Rajdhani&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+{% block content %}
+<body>
+  <header class="header-firstscreen">
+      <div class="container">
+        <div class="header-row">
+          {% if user.is_authenticated %}
+          <a href="{% url 'index' %}" class="header-home"><p class="logo">Weather</p></a>
+          {% else %}
+          <a href="{% url 'logout' %}" class="header-home"><p class="logo">Weather</p></a>
+          {% endif %}
+          <nav class="navigation">
+            <ul class="navigation-list">
+              <li class="navigation-list__item">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="navigation-link">Logout</a>
+                {% else %}
+                <a href="{% url 'login' %}" class="navigation-link">Login</a>
+                {% endif %}
+              </li>
+              <li class="navigation-list__item">
+                <a href="{% url 'signup' %}" class="navigation-link">Registration</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <section class="firstscreen">
+    <div class="container firstscreen-container">
+      <div class="firstscreen-form__description">
+        <div class="firstscreen-title">Weather</div>
+        <h1 class="firstscreen-header__text">
+          App to track the weather around the world in real time
+        </h1>
+        <p class="firstscreen-description">
+          This application provides information about the weather in any city in the world. To get started, please log in to the control panel
+        </p>
+      </div>
+      <form class="firstscreen-form" method="post">
+        <p class="firstscreen-form__title">
+          CONTROL <span class="firstscreen-colorword">Panel</span></p>
+          {% block panel %}
+        <div class="firstscreen-form__content">
+            {% block welcome %}
+            {% if user.is_authenticated %}
+            <h2 class="firstscreen-form__content__welcome">Hi {{ user.username }} ! You have successfully passed the authorization
+              and you can start working with our program. To get started, click the button below.</h2>
+           {% else %}
+            <h2 class="firstscreen-form__content__welcome">You are not logged in. For authorization, click on the "Login" button above. To register, click on the "Registration" button</h2>
+            {% endif %}
+        {% endblock welcome %}
+          {% block login %}
+          {% endblock login %}
+        </div>
+        {% if user.is_authenticated %}
+          {% block button %}
+            <a href="{% url 'weather' %}" class="firstscreen-button__start">Get Started</a>
+          {% endblock button %}
+        {% else %}
+        {% endif %}
+       {% endblock panel %}
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <ul class="footer-list">
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-facebook-f footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-twitter footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-google-plus-g footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-pinterest footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-instagram footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fab fa-vk footer__icon"></i>
+            </a>
+          </li>
+          <li class="footer-list__item">
+            <a href="#">
+              <i class="fas fa-rss footer__icon"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer__copyrigths">
+        © 2021 WeatherApp
+      </p>
+    </div>
+  </footer>
+</body>
+{% endblock content %}
+</html>
