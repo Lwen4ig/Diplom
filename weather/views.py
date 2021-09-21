@@ -5,7 +5,6 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.datetime_safe import datetime
 from django.views import generic
-
 from weather.models import City
 from .forms import City_form
 
@@ -53,6 +52,7 @@ def weather(request):
 
     widget_cities = reversed(all_cities[-3:])
     context = {'all_info': widget_cities, 'form': form}
+
     if len(all_error) >= 1:
         error = all_error[0]['error']
         context['error'] = error
