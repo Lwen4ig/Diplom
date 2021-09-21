@@ -56,8 +56,6 @@ def weather(request):
     if len(all_error) >= 1:
         error = all_error[0]['error']
         context['error'] = error
-    else:
-        pass
 
     return render(request, 'weather/weather.html', context)
 
